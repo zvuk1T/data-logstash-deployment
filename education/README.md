@@ -3,8 +3,8 @@
 
 **📅 Established:** 29.07.2025  
 **🎯 Purpose:** Democratizing Infrastructure Knowledge  
-**👨‍🚀 Founding Student:** zvuk1T (Data)  
-**🔬 Chief Learning Officer:** Spock  
+**🤖 Founding Student:** Lieutenant Commander Data (zvuk1T)  
+**� Chief Learning Officer:** Science Officer Spock  
 **🏢 Organization:** Webeet Internship Program
 
 ---
@@ -30,7 +30,7 @@
 
 1. **✅ Repository Creation:**
    - A new Git repository named `<yourname>-logstash-deployment` is created
-   - **Our Target:** `zvuk1T-logstash-deployment`
+   - **Our Target:** `data-logstash-deployment` (Lieutenant Commander Data's repository)
 
 2. **✅ Terraform Structure:**
    - Repository contains root Terraform configuration (`/terraform`)

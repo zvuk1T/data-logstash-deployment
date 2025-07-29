@@ -1,9 +1,9 @@
-# 🚀 zvuk1T-logstash-deployment
+# 🚀 data-logstash-deployment
 ## **Mission #107: Modular Logstash Environment with Terraform & Ansible**
 
 **📅 Mission Date:** July 29, 2025  
 **🎯 Mission Type:** Advanced Infrastructure as Code Deployment  
-**👨‍💻 Engineer:** zvuk1T  
+**🤖 Engineer:** Lieutenant Commander Data (zvuk1T)  
 **📋 Assignment:** Captain Alejandro Roman Ibanez  
 
 ---
@@ -29,7 +29,7 @@ Architecture Components:
 ## 📁 **REPOSITORY STRUCTURE**
 
 ```
-zvuk1T-logstash-deployment/
+data-logstash-deployment/
 ├── terraform/                    # Infrastructure as Code
 │   ├── main.tf                  # Root configuration (module orchestration)
 │   ├── variables.tf             # Configuration parameters

@@ -3,8 +3,8 @@
 
 **📅 Learning Date:** 29.07.2025  
 **🎓 Learning Level:** Advanced  
-**👨‍🚀 Student:** Data (zvuk1T)  
-**🔬 Instructor:** Spock  
+**🤖 Student:** Lieutenant Commander Data (zvuk1T)  
+**� Instructor:** Science Officer Spock  
 **🎯 Prerequisites:** Module 1 (Terraform Modules) + Module 2 (Ansible Fundamentals)
 
 ---

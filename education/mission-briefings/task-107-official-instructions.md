@@ -4,7 +4,7 @@
 **📅 Issue Created:** 10 hours ago  
 **🎯 Task Classification:** DevOps Infrastructure as Code  
 **👨‍💼 DevSecOps Lead:** Alejandro Roman Ibanez (@AlejandroRomanIbanez)  
-**👨‍💻 Assigned:** zvuk1T  
+**🤖 Assigned:** Lieutenant Commander Data (zvuk1T)  
 **📊 Project:** layered  
 **🏷️ Labels:** devops  
 **📋 Status:** In Progress

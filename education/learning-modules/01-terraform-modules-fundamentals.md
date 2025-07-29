@@ -3,8 +3,8 @@
 
 **📅 Learning Date:** 29.07.2025  
 **🎓 Learning Level:** Fundamental Concepts  
-**👨‍🚀 Student:** Data (zvuk1T)  
-**🔬 Instructor:** Spock  
+**🤖 Student:** Lieutenant Commander Data (zvuk1T)  
+**� Instructor:** Science Officer Spock  
 **🎯 Prerequisites:** Completed terraform.tfvars configuration (Mission Setup)
 
 ---

@@ -1,0 +1,109 @@
+# 🔒 STARFLEET SECURITY PROTOCOL - SENSITIVE DATA PROTECTION
+# Created by: Lieutenant Commander Data & Science Officer Spock
+# Mission: #107 - Logstash Deployment
+# Date: 29.07.2025
+
+# =============================================================================
+# 🛡️ MISSION-CRITICAL SECURITY - KEEP SENSITIVE DATA OUT OF PUBLIC REPOS
+# =============================================================================
+
+# 📋 Personal Mission Logs & Sensitive Documentation
+captain-logs/
+captain-logs/*
+
+# 🔐 Terraform Sensitive Files
+*.tfvars
+*.tfvars.json
+terraform.tfstate
+terraform.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfplan
+*.tfplan.*
+
+# 🔑 AWS & Cloud Provider Credentials
+.aws/
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+*.ppk
+
+# 🎯 Ansible Sensitive Files
+ansible/inventory/production*
+ansible/inventory/staging*
+ansible/vault_pass.txt
+ansible/.vault_pass
+*.vault
+
+# 📊 Environment & Configuration Files
+.env
+.env.local
+.env.*.local
+config.json
+secrets.json
+
+# 💻 Development & IDE Files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# 📱 macOS System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 📝 Logs & Temporary Files
+*.log
+logs/
+tmp/
+temp/
+.tmp/
+
+# 🗂️ Backup Files
+*.backup
+*.bak
+*.orig
+
+# 🔧 Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🐍 Python Virtual Environments
+venv/
+env/
+.venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+
+# =============================================================================
+# 📋 KEEP THESE FILES IN VERSION CONTROL (Educational & Public)
+# =============================================================================
+# ✅ README.md files
+# ✅ education/ directory (learning materials)
+# ✅ terraform/ modules (infrastructure code)
+# ✅ ansible/ roles and playbooks (automation code)
+# ✅ .gitignore (this file)
+
+# =============================================================================
+# 🖖 SPOCK'S LOGICAL NOTE:
+# This .gitignore follows security best practices by protecting:
+# 1. Personal mission logs (ignored/ folder)
+# 2. Infrastructure secrets (*.tfvars, credentials)
+# 3. Temporary files and system artifacts
+# 4. Development environment configurations
+# 
+# "Logic dictates that sensitive information should never be committed
+# to public version control systems." - Science Officer Spock
+# =============================================================================
