@@ -28,9 +28,9 @@ variable "vpc_cidr" {
 }
 
 variable "availability_zone" {
-  description = "AWS AZ for subnet placement - ensures regional deployment (e.g., 'us-east-1a')"
+  description = "AWS AZ for subnet placement - ensures regional deployment (e.g., 'eu-central-1a')"
   type        = string
-  default     = "us-east-1a"
+  default     = "eu-central-1a"
 }
 
 variable "public_subnet_cidr" {

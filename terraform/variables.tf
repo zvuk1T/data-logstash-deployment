@@ -10,9 +10,10 @@
 variable "aws_region" {
   description = "AWS region for resource deployment"
   type        = string
-  default     = "us-west-2"
+  default     = "eu-central-1"
 
   # Recommended regions for production:
+  # - eu-central-1 (Frankfurt) - European compliance, good performance
   # - us-west-2 (Oregon) - Lower cost, stable
   # - us-east-1 (Virginia) - Largest service availability
   # - eu-west-1 (Ireland) - European compliance
@@ -37,7 +38,7 @@ variable "vpc_cidr_block" {
 variable "availability_zone" {
   description = "AWS Availability Zone for resource placement"
   type        = string
-  default     = "us-west-2a"
+  default     = "eu-central-1a"
 
   # Must match the selected AWS region
   # Single AZ deployment for cost optimization

@@ -8,7 +8,7 @@
 
 # AWS Configuration
 # Replace with your preferred AWS region
-aws_region = "us-west-2"
+aws_region = "eu-central-1"
 
 # Network Configuration
 # VPC CIDR block - adjust if conflicts with existing networks
@@ -16,10 +16,11 @@ vpc_cidr_block = "10.0.0.0/16"
 
 # Availability zone - must match your selected region
 # Examples:
+# eu-central-1a, eu-central-1b, eu-central-1c (Frankfurt)
 # us-west-2a, us-west-2b, us-west-2c (Oregon)
 # us-east-1a, us-east-1b, us-east-1c (Virginia)
 # eu-west-1a, eu-west-1b, eu-west-1c (Ireland)
-availability_zone = "us-west-2a"
+availability_zone = "eu-central-1a"
 
 # Compute Configuration
 # Instance type - adjust based on workload requirements

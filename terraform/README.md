@@ -111,8 +111,8 @@ $(terraform output -raw ssh_to_logstash)
 
 ```hcl
 # Essential settings for deployment
-aws_region        = "us-west-2"
-availability_zone = "us-west-2a"
+aws_region        = "eu-central-1"
+availability_zone = "eu-central-1a"
 key_pair_name    = "your-key-pair-name"
 allowed_ssh_cidr = "203.0.113.0/24"  # Your office network
 environment      = "production"
@@ -140,7 +140,7 @@ enable_detailed_monitoring = true
 vpc_cidr_block = "172.16.0.0/16"  # Avoid conflicts
 
 # Different availability zone
-availability_zone = "us-east-1b"
+availability_zone = "eu-central-1b"
 ```
 
 ## Usage Examples
