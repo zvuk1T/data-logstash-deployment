@@ -1,0 +1,121 @@
+# ============================================================================
+# TERRAFORM VARIABLES EXAMPLE
+# ============================================================================
+# Purpose: Template configuration file for Logstash deployment
+# Usage: Copy to terraform.tfvars and customize for your environment
+# Instructions: cp terraform.tfvars.example terraform.tfvars
+# ============================================================================
+
+# AWS Configuration
+# Replace with your preferred AWS region
+aws_region = "us-west-2"
+
+# Network Configuration
+# VPC CIDR block - adjust if conflicts with existing networks
+vpc_cidr_block = "10.0.0.0/16"
+
+# Availability zone - must match your selected region
+# Examples:
+# us-west-2a, us-west-2b, us-west-2c (Oregon)
+# us-east-1a, us-east-1b, us-east-1c (Virginia)
+# eu-west-1a, eu-west-1b, eu-west-1c (Ireland)
+availability_zone = "us-west-2a"
+
+# Compute Configuration
+# Instance type - adjust based on workload requirements
+# Development: "t3.micro" (1 vCPU, 1 GB RAM)
+# Testing: "t3.small" (2 vCPU, 2 GB RAM)
+# Production: "t3.medium" or larger (2 vCPU, 4+ GB RAM)
+instance_type = "t3.micro"
+
+# EC2 Key Pair - MUST EXIST before deployment
+# Create with: aws ec2 create-key-pair --key-name logstash-deployment --output text --query 'KeyMaterial' > ~/.ssh/logstash-deployment.pem
+# Then: chmod 400 ~/.ssh/logstash-deployment.pem
+key_pair_name = "logstash-deployment"
+
+# Security Configuration
+# SSH access restriction - IMPORTANT for production security
+# Examples:
+# "0.0.0.0/0"          # Allow from anywhere (DEVELOPMENT ONLY)
+# "203.0.113.0/24"     # Allow from office network
+# "10.0.0.0/8"         # Allow from corporate VPN
+# "203.0.113.10/32"    # Allow from specific IP only
+allowed_ssh_cidr = "0.0.0.0/0"
+
+# Logstash port for log ingestion
+# 5044: Standard Elasticsearch Beats input
+# 5000: Logstash default input
+# 514:  Syslog (requires root privileges)
+logstash_port = 5044
+
+# Environment and Project
+# Environment identifier for resource tagging
+# Valid values: dev, development, test, testing, stage, staging, prod, production
+environment = "dev"
+
+# Project name for resource organization
+# Must contain only lowercase letters, numbers, and hyphens
+project_name = "logstash-deployment"
+
+# Advanced Configuration (Optional)
+# Uncomment and modify if needed
+
+# Enable detailed CloudWatch monitoring (additional cost)
+# enable_detailed_monitoring = true
+
+# Enable termination protection for production
+# enable_termination_protection = true
+
+# ============================================================================
+# QUICK START CHECKLIST:
+# 
+# 1. Prerequisites:
+#    □ AWS CLI configured with appropriate permissions
+#    □ Terraform installed (>= 1.0)
+#    □ EC2 key pair created in target region
+# 
+# 2. Customization:
+#    □ Update aws_region to your preferred region
+#    □ Set availability_zone to match your region
+#    □ Replace key_pair_name with your actual key pair
+#    □ Restrict allowed_ssh_cidr for production security
+#    □ Adjust instance_type based on performance needs
+# 
+# 3. Deployment:
+#    □ Copy this file: cp terraform.tfvars.example terraform.tfvars
+#    □ Edit terraform.tfvars with your values
+#    □ Run: terraform init
+#    □ Run: terraform plan
+#    □ Run: terraform apply
+# 
+# 4. Post-Deployment:
+#    □ Note the SSH commands from terraform output
+#    □ Connect to bastion host and verify connectivity
+#    □ Configure log shippers to use Logstash endpoint
+#    □ Set up monitoring and alerting
+# 
+# ============================================================================
+# PRODUCTION SECURITY RECOMMENDATIONS:
+# 
+# 1. Network Security:
+#    - Set allowed_ssh_cidr to specific IP ranges
+#    - Consider using AWS Systems Manager Session Manager
+#    - Enable VPC Flow Logs for network monitoring
+# 
+# 2. Instance Security:
+#    - Enable termination protection for production instances
+#    - Configure automated patching and updates
+#    - Implement log rotation and disk monitoring
+# 
+# 3. Access Management:
+#    - Use IAM roles instead of access keys where possible
+#    - Implement least privilege access principles
+#    - Enable CloudTrail for API logging
+# 
+# 4. Monitoring:
+#    - Enable detailed CloudWatch monitoring
+#    - Set up alerting for instance health and performance
+#    - Monitor Logstash performance and log ingestion rates
+# 
+# Live long and prosper! 🖖
+# ============================================================================
