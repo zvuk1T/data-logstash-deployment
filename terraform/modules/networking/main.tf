@@ -20,6 +20,8 @@ resource "aws_vpc" "main" {
   }
 }
 
+### Your private route table needs a NAT gateway or NAT instance to allow outbound internet access for the private subnet(Mainly for updates in the server).
+
 # Internet Gateway: Enables public subnet internet access for bastion
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id

@@ -202,7 +202,7 @@ resource "aws_instance" "logstash" {
   associate_public_ip_address = false
 
   # User data script for Logstash setup
-  user_data = base64encode(<<-EOF
+  user_data = base64encode(<<-EOF ### sicne we will use Ansible we will not use User Data for Logstash and bastion host
               #!/bin/bash
               # Update system packages
               yum update -y
