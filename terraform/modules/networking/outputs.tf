@@ -76,6 +76,26 @@ output "internet_gateway_id" {
   # - Troubleshooting connectivity
 }
 
+output "nat_gateway_id" {
+  description = "ID of NAT Gateway - for outbound internet access from private subnet"
+  value       = aws_nat_gateway.main.id
+
+  # This output enables:
+  # - Route table validation
+  # - Network monitoring and troubleshooting
+  # - Cost tracking and optimization
+}
+
+output "nat_gateway_public_ip" {
+  description = "Public IP of NAT Gateway - for allowlist configurations"
+  value       = aws_eip.nat_gateway.public_ip
+
+  # This output enables:
+  # - External service allowlist configuration
+  # - Network security monitoring
+  # - Outbound traffic source identification
+}
+
 output "availability_zone" {
   description = "AZ where subnets were created - for instance placement consistency"
   value       = var.availability_zone

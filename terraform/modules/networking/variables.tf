@@ -40,7 +40,7 @@ variable "public_subnet_cidr" {
 }
 
 variable "private_subnet_cidr" {
-  description = "CIDR for private subnet - for Logstash instance (no direct internet)"
+  description = "CIDR for private subnet - for Logstash instance (no inbound internet, outbound via NAT Gateway)"
   type        = string
   default     = "10.0.2.0/24"
 }

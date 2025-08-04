@@ -17,13 +17,15 @@ Build a complete, automated, and secure Logstash deployment using advanced Terra
 This repository implements a **modular Terraform architecture** with **Ansible automation** for secure Logstash deployment:
 
 ```
-Architecture Components:
-┌─────────────────────────────────────────┐
-│  🌐 VPC + Public/Private Subnets       │
-│  🖥️  Bastion Host (Public Subnet)       │
-│  📊 Logstash Instance (Private Subnet)  │
-│  🔒 Security Groups (Defense in Depth)  │
-└─────────────────────────────────────────┘
+Enhanced Architecture Components (With NAT Gateway):
+┌──────────────────────────────────────────────────┐
+│  🌐 VPC + Public/Private Subnets                │
+│  🖥️  Bastion Host (Public Subnet)                │
+│  � NAT Gateway (Public Subnet)                  │
+│  �📊 Logstash Instance (Private Subnet)           │
+│  🔒 Security Groups (Defense in Depth)           │
+│  ↗️  Outbound Internet Access via NAT Gateway     │
+└──────────────────────────────────────────────────┘
 ```
 
 ## 📁 **REPOSITORY STRUCTURE**
@@ -68,6 +70,21 @@ data-logstash-deployment/
 **✅ Enterprise Grade:** Defense-in-depth security implemented  
 **✅ Career Ready:** Senior-level Infrastructure as Code mastery achieved
 
+### **🔄 CAPTAIN ALEJANDRO'S FEEDBACK INTEGRATION (August 4, 2025):**
+
+**📋 Professional Enhancement Completed:**
+- **✅ NAT Gateway Added:** Private subnet now has outbound internet access for updates
+- **✅ Ansible Strategy Confirmed:** User Data scripts prepared for Ansible replacement
+- **✅ Architecture Enhanced:** Upgraded from isolated to NAT-enabled private subnet
+- **✅ Terraform Validation:** Zero syntax errors, enterprise-grade implementation maintained
+
+**🏗️ Enhanced Network Architecture:**
+```
+Traffic Flow Design:
+├── Inbound Access: Internet → Bastion Host → Logstash (Secure SSH)
+└── Outbound Access: Logstash → NAT Gateway → Internet (Updates/Packages)
+```
+
 ## 🎓 **EDUCATIONAL VALUE**
 
 This repository serves dual purposes:
@@ -89,11 +106,13 @@ export AWS_PROFILE=489962060388_ReadOnlyAccess
 export AWS_DEFAULT_REGION=eu-central-1
 terraform plan                            # ✅ Architecture validated
 
-# Success Indicators:
+# Success Indicators (Enhanced with NAT Gateway):
 - "modules_deployed = ['networking', 'compute']"
-- No syntax errors
+- No syntax errors in NAT Gateway implementation
 - Complete infrastructure plan generated
 - Regional configuration working
+- NAT Gateway resources properly configured
+- Elastic IP and routing validated
 ```
 
 ### **🏗️ FINAL ARCHITECTURE:**

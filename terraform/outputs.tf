@@ -116,6 +116,7 @@ output "quick_start_guide" {
     vpc_cidr       = module.networking.vpc_cidr_block
     public_subnet  = module.networking.public_subnet_cidr
     private_subnet = module.networking.private_subnet_cidr
+    nat_gateway_ip = module.networking.nat_gateway_public_ip
 
     # Next steps
     next_steps = [

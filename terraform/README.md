@@ -1,12 +1,22 @@
-# Logstash Deployment Infrastructure
+# 🚀 **Logstash Deployment Infrastructure**
+## **Mission #107: Enterprise-Grade Modular Terraform Architecture**
 
-## Overview
+**📅 Created:** 30.07.2025  
+**🔄 Enhanced:** 04.08.2025 (NAT Gateway Integration)  
+**🎯 Purpose:** Production-ready Logstash infrastructure with modular architecture  
+**🏗️ Architecture:** Defense-in-depth security with NAT Gateway enhancement  
+**🛡️ Security Model:** Network isolation + controlled outbound access
 
-This Terraform configuration deploys a secure, production-ready Logstash infrastructure on AWS using a modular architecture with defense-in-depth security principles.
+---
 
-## Architecture
+## 🎯 **OVERVIEW**
+
+This Terraform configuration deploys a secure, production-ready Logstash infrastructure on AWS using a **modular architecture** with **defense-in-depth security principles** and **NAT Gateway enhancement** for operational capability.
+
+## 🏗️ **ARCHITECTURE (Enhanced with NAT Gateway)**
 
 ```
+Enhanced Infrastructure Architecture:
 ┌─────────────────────────────────────────────────────────────┐
 │                    Internet Gateway                         │
 └─────────────────────┬───────────────────────────────────────┘
@@ -20,20 +30,31 @@ This Terraform configuration deploys a secure, production-ready Logstash infrast
 │  │                         │  │                         │   │
 │  │  ┌─────────────────┐   │  │  ┌─────────────────┐    │   │
 │  │  │  Bastion Host   │   │  │  │ Logstash Server │    │   │
-│  │  │  (SSH Gateway)  │   │  │  │ (Log Processing)│    │   │
+│  │  │  (SSH Gateway)  │◄──┼──┼──┤ (Log Processing)│    │   │
 │  │  │  Public IP      │   │  │  │ Private IP Only │    │   │
 │  │  └─────────────────┘   │  │  └─────────────────┘    │   │
+│  │                         │  │           │             │   │
+│  │  ┌─────────────────┐   │  │           ▼             │   │
+│  │  │   NAT Gateway   │◄──┼──┼───────────┘             │   │
+│  │  │ (Outbound Only) │   │  │                         │   │
+│  │  └─────────────────┘   │  │                         │   │
 │  └─────────────────────────┘  └─────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
+
+Traffic Flows:
+├── Inbound: Internet → Bastion Host → Logstash (Secure Management)
+└── Outbound: Logstash → NAT Gateway → Internet (Updates/Packages)
 ```
 
-## Security Features
+## 🛡️ **Security Features (Enhanced)**
 
-- **Network Isolation**: Private subnet with no direct internet access
+- **Network Isolation**: Private subnet with no inbound internet access
+- **Controlled Outbound**: NAT Gateway enables private subnet updates/packages
 - **Bastion Host**: Secure SSH gateway for administrative access
 - **Defense in Depth**: Multiple security layers with least privilege
 - **Security Groups**: Granular network access control
 - **Encrypted Transit**: SSH key-based authentication
+- **Ansible-Ready**: User Data prepared for automation replacement
 
 ## Prerequisites
 

@@ -88,7 +88,7 @@ resource "aws_security_group" "logstash" {
 
     # Only bastion host can SSH to Logstash instance
     # This implements the jump box security pattern
-    # No direct SSH access from internet
+    # No inbound SSH access from internet (outbound internet via NAT Gateway)
   }
 
   # Inbound Rules - Logstash input port from VPC
@@ -156,7 +156,7 @@ resource "aws_instance" "bastion" {
   # Enable public IP for internet access
   associate_public_ip_address = true
 
-  # User data script for initial setup
+  # User data script for initial setup (will be replaced by Ansible in Mission #108)
   user_data = base64encode(<<-EOF
               #!/bin/bash
               # Update system packages
@@ -201,8 +201,9 @@ resource "aws_instance" "logstash" {
   # No public IP - private subnet only
   associate_public_ip_address = false
 
-  # User data script for Logstash setup
-  user_data = base64encode(<<-EOF ### sicne we will use Ansible we will not use User Data for Logstash and bastion host
+  # User data script for Logstash setup (will be replaced by Ansible in Mission #108)
+  # NOTE: Since we will use Ansible we will not use User Data for Logstash and bastion host
+  user_data = base64encode(<<-EOF
               #!/bin/bash
               # Update system packages
               yum update -y
@@ -256,11 +257,13 @@ resource "aws_instance" "logstash" {
 # ├── Logstash Instance (no public IP)
 # │   ├── SSH access from bastion only
 # │   ├── Logstash port 5044 from VPC
-# │   └── No direct internet access
+# │   ├── No inbound internet access
+# │   └── Outbound internet via NAT Gateway for updates
 # 
 # Security Philosophy:
 # - Defense in depth with network isolation
 # - Principle of least privilege for access
 # - Bastion host as single point of entry
+# - Controlled outbound access via NAT Gateway
 # - Application security through VPC boundaries
 # ============================================================================

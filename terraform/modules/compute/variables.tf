@@ -36,7 +36,7 @@ variable "private_subnet_id" {
   type        = string
 
   # Logstash instance deployed here for security isolation
-  # No direct internet access - accessed via bastion host
+  # No inbound internet access - accessed via bastion host (outbound via NAT Gateway)
 }
 
 variable "availability_zone" {

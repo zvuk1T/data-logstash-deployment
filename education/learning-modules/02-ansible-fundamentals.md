@@ -383,7 +383,7 @@ Bastion Host Access Pattern:
 2. 🖥️ Connects to bastion host (public IP)
 3. 🔒 Bastion proxies connection to private servers
 4. 📊 Logstash servers configured via bastion tunnel
-5. ✅ No direct internet access to private infrastructure
+5. ✅ No inbound internet access to private infrastructure (outbound via NAT Gateway)
 ```
 
 #### **🛡️ SSH Proxy Configuration:**

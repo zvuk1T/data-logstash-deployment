@@ -208,7 +208,8 @@ Mission #107 Security Architecture:
 │  └─ AWS Config (Compliance monitoring)         │
 ├─────────────────────────────────────────────────┤
 │  🌐 VPC Security                               │  ← Layer 6: Network isolation
-│  ├─ Private subnets (No direct internet)      │
+│  ├─ Private subnets (No inbound internet)     │
+│  ├─ NAT Gateway (Controlled outbound access)  │
 │  ├─ NACLs (Network-level filtering)           │
 │  └─ Route tables (Controlled traffic flow)    │
 ├─────────────────────────────────────────────────┤
@@ -330,7 +331,7 @@ resource "aws_cloudtrail" "security_audit_trail" {
 ```hcl
 # Mission #107 Network Security Implementation
 
-# Private subnets - no direct internet access
+# Private subnets - no inbound internet access, outbound via NAT Gateway
 resource "aws_subnet" "private_logstash" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.10.0/24"

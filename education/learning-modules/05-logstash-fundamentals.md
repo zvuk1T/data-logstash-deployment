@@ -166,7 +166,8 @@ Apps/Systems → Beats → Logstash (Private Subnet) → Elasticsearch
 ```
 
 **Security Design:**
-- 🔒 **Private Subnet:** Logstash not directly accessible from internet
+- 🔒 **Private Subnet:** Logstash not directly accessible from internet (inbound protection)
+- ↗️ **NAT Gateway:** Outbound internet access for updates and packages
 - 🛡️ **Bastion Access:** SSH through bastion for management
 - 🔗 **Beats Input:** Port 5044 for data ingestion
 - 📤 **Elasticsearch Output:** Secure communication to data store
